@@ -1,6 +1,6 @@
 filebeat.prospectors:
 - type: log
   paths:
-    - ./logstash-tutorial.log 
+    - /usr/share/filebeat/logs/sample-log-path/* 
 output.logstash:
   hosts: ["logstash:5044"]

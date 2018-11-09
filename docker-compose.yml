@@ -17,8 +17,9 @@ services:
   filebeat:    
     networks:
       - elk_net
-    # volumes:
-      # - ./filebeat/filebeat-test.yml:/usr/share/filebeat/filebeat.yml
+    volumes:
+      - ./filebeat/filebeat-test.yml:/usr/share/filebeat/filebeat.yml
+      - ./sample-log-path:/usr/share/filebeat/logs/sample-log-path
     build: ./filebeat
 
 networks:
