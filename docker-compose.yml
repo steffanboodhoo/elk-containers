@@ -14,12 +14,12 @@ services:
     volumes:
       - ./logstash/pipeline:/usr/share/logstash/pipeline/
 
-  filebeat:
-    build: ./filebeat
+  filebeat:    
     networks:
       - elk_net
-    volumes:
-      - ./filebeat/filebeat-test.yml:/usr/share/filebeat.yml
+    # volumes:
+      # - ./filebeat/filebeat-test.yml:/usr/share/filebeat/filebeat.yml
+    build: ./filebeat
 
 networks:
   elk_net:
